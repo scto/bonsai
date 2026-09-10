@@ -1,6 +1,6 @@
 plugins {
     kotlin("multiplatform")
-    id("com.android.library")
+    id("com.android.kotlin.multiplatform.library")
     id("org.jetbrains.compose")
     //id("com.vanniktech.maven.publish")
 }
@@ -8,6 +8,12 @@ plugins {
 kotlinMultiplatform()
 
 kotlin {
+    androidLibrary {
+        namespace = "com.scto.bonsai.core"
+        compileSdk = 34
+        minSdk = 24
+    }
+
     sourceSets {
         val commonMain by getting {
             dependencies {

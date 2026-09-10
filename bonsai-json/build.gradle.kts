@@ -1,7 +1,7 @@
 plugins {
     kotlin("multiplatform")
     kotlin("plugin.serialization")
-    id("com.android.library")
+    id("com.android.kotlin.multiplatform.library")
     id("org.jetbrains.compose")
     //id("com.vanniktech.maven.publish")
 }
@@ -9,6 +9,12 @@ plugins {
 kotlinMultiplatform()
 
 kotlin {
+    androidLibrary {
+        namespace = "com.scto.bonsai.json"
+        compileSdk = 34
+        minSdk = 24
+    }
+
     sourceSets {
         val commonMain by getting {
             dependencies {
